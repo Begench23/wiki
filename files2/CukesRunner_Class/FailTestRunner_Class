@@ -1,0 +1,34 @@
+
+
+    FAILED TESTS:
+
+    Creat new Class for only for Failed Scenarios to run.
+        in Runner package
+
+
+        1. This class is going to be runnable with JUnit/Cucumber as well like
+            normal Runner Class
+        @RunWith(Cucumber.com)
+
+        2. Running criteria is achieved by Cucumber Options too
+
+            Where it need 2 information: feature and glue
+
+          EX1:
+                 @CucumberOptions(
+                         features ="@target/failReport.txt" ,
+                         glue = "com/cydeo/step_definitions"
+                 )
+
+             1. Features: Which features should be run,
+                    (if we add features files from resources it will run everything,
+                    that's why we give and path what to run for rerun report path,
+                    where is only failed Scenarios)
+
+                    @ -> is a syntax
+                    target/failReport.txt -> is a file path where the features to be run
+
+             2. Glue : is from where Runner Class going to get StepDefinition Classes where
+                        scrips are stored. With methods and @Annotations that runnable
+
+

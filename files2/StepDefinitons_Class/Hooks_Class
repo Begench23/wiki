@@ -1,0 +1,57 @@
+
+
+     HOOKS:
+
+            If repeating steps for Test. No need to add it every time,
+            it's going to make a step duplication, use Hooks in thous situations
+
+
+   Global Hooks:        Feature Level / Before-AfterClass(Feature)
+   Hooks:               Scenario Level / Before-After each Scenario/s
+   Step Hooks           Step Level / Before-After each Step/s
+
+
+         @BeforeAll
+
+            (FEATURE start)
+
+                @Before
+
+                    (SCENARIO start)
+
+                        @BeforeStep
+
+                            (STEP Start- @When/@And/@Given/@Then)
+                            (STEP End)
+
+                        @AfterStep
+
+                    (SCENARIO end)
+
+                @After
+
+            (FEATURE end)
+
+         @AfterAll
+
+
+    ------------------------------
+
+
+        1. Step Before After
+
+            if @BeforeStep executes, than @AfterStep will also
+            if step fails..next steps will skipped, and so @BeforeStep and @AfterStep too
+            for that given next steps
+            But not @Before And @After cos they belong to Scenario, step won't effect the
+
+
+        2. Conditional Hooks:  add tags for Hooks Annotation to run only with given tag etc.
+
+
+        1. @BeforeAll: if you setUp driver before your Features start testing
+        2. @Before : if you have a situation where you need to Login before every Scenario
+
+        3. @After : if you logout after your Scenario and if Scenario fails take screenshot
+        4. @AfterAll: if you closing/quit your driver After you test Feature.
+

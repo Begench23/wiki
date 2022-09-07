@@ -1,0 +1,109 @@
+
+
+
+    Runner Class:
+
+        is used to run all automation from one place.
+
+
+
+    1.     It is a class and it makes run everything threw:
+             @RunWith (Cucumber.class)
+
+
+
+
+    2.     And for Run in specific conditions/options it uses:
+            @CucumberOptions(
+                    ...,
+                    ...,
+                    ...
+            )
+
+
+-------------------------------------------------------------------
+
+        CucumberOptions:
+
+
+    1. features = "src/test/resources/features",
+
+        This adds where Cucumber gets RUN ORDER from:
+            *** path should start from source
+
+    2. glue = "com/cydeo/step_definitions",
+
+        This is a glue where Cucumber RUNS METHODS from:
+            StepDefinition Class
+            *** path should start from root
+
+    3. dryRun = false/true,
+
+        This is run all/only:
+
+            1. dryRun = false,
+                going to run both features and glue. (Scenarios)and(stepDefs)
+
+            2. dryRun = true,
+                going to run only features. No glue. methods() not going to
+                execute, this maybe used to get Snippets to make StepDefs Class
+                get ready.  (Try for generating snippets 3 way)
+
+    4. tags = "@wip"/ "@smoke" / "@regression"
+
+        This tag will give a condition to which Scenario
+        or Feature itself to run:
+
+            1. or: "@a or @b" : anything that contains one or another ||
+                                    ex1:(@a, @b, @a @b)
+
+            2. and: "@a and @b": only if both tags contains &&
+                                    ex1: (@a @b) only
+
+            3. and not: "@a and not @b": if @a presents and @b not
+                                    ex1: (@a, @a @c)
+
+            4. not: "not @a" : anything but @a
+                                    ex1: (@b, @c)
+
+
+    5. plugin = "html:target/cucumberReport.html",
+
+        This is html: plugIn to get the Report from Cucumber;
+
+        html:  is a plugin
+
+        1. It needs a location where to STORE the report file,
+        2. It needs NAME for a report file,
+        3. It needs FORMAT of report file,
+
+
+    5. plugin =
+
+
+
+
+    5. plugin =
+
+
+
+
+
+
+
+
+
+
+        monochrome= boolean,
+        objectFactory= class,
+
+
+        java io.cucumber.core.cli.Main --help (import?)
+        mvn test -Dcucumber.filter.tags="@smoke"
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+
+
+    STEP_DEFINITION:
+
+        It is a package where feature file contents are expanding,
+        Where the Automation Testing is done.
+
+        It is where "steps" are transforming to snippets/ methods.
+                (each step is one method, or one snippet)
+
+        It is where the glue= content to running, for CukesRunner Class.
+
+        It is the package where the ".java" files for Testing is Stored,
+        The name of a Classes doesn't matters, Cos Cucumber Run it by the
+        feature files name, and Step orders in Scenario,
+        But it is Better to give name for Step_Definition Class the name of the
+        feature file That steps are defined.
+            And the order of methods doesn't matter. It will run by steps order in
+            feature files.
+
+
+     EX1:    @When("user enters student username")
+                 public void userEntersStudentUsername(){
+                       // some codding
+                 }
+
+     EX2:    @When("user type {string} in the wiki search box")
+                public void user_type_in_the_wiki_search_box(String string) {
+                    elements.searchBox.sendKeys(string);
+                }
+
+        It will run by @Annotations in the top of Method Signature.
+        Annotations "text" btw double coats have to match exactly same with
+        feature step (Given, When, Then)
+
+        1. @Given can come from different Step_Definition Class, cos it is pre-Condition
+        2. @When needs to make a given action in WebPage (logic/implementation)
+        3. @Then where we do assertion for expected and actual (best if visible)

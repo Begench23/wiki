@@ -1,0 +1,83 @@
+
+
+  FEATURES files:
+
+    Feature files are where the Scenarios are stored
+
+    It is where BDD and DDT comes from, TestCase for Java-IntelliJ
+
+    Test will run according to this feature files,
+    and if run all, it will run by AlphaNumeric name of files
+
+
+1.     INTRO: creation of "features" package and "feature" file
+
+     A.   Creat "resources" package name. Under test file, same line with java package
+          Cos resources for Step_Definition, Runner_Class will come from here
+
+     B.   Creat "features" package name, To store all the feature files in one place
+
+     C.   Creat feature file, To write, store Feature/Scenarios/Steps
+
+      Package: Right click destination, New-Package-giveName, Enter
+      File   : Right click destination, New-File-giveName, add file format ".feature", Enter.
+
+                                            ***
+
+
+
+ 2.     FEATURE file where the feature is described, created, stored
+
+
+
+----------------------------------------------------------------------------------------
+
+                     1.  it will start with Feature (it is Combination of Scenario/s)
+
+   Feature:
+                            brief description of what feature does,
+                            user story, AC, TestCase ID.
+                            anything in here is just to give information
+                            NOT for Testing. ":" after double coat just printable
+
+
+----------------------------------------------------------------------------------------------
+
+                      2.    if all Scenarios under has the same pre-Condition,
+                            (it is Combination of When/Whens for All Scenario)
+                            That repeat same way for all of them,
+                            Before each Scenarios First Step
+
+     Background:
+                            brief description of what pre-Condition does
+                            anything in here is just to give information
+                            NOT for Testing. ":" after double coat just printable
+
+
+         Given -> pre-Condition for begin for All Scenarios
+         Given/And-> if there is more than one pre condition Step
+
+
+----------------------------------------------------------------------------------------------
+
+                      3.    Scenario/Example
+                            (it is Combination of Steps (Given, When, Then))
+
+     Scenario:
+                            brief description of what scenario does,
+                            login with valid credentials
+                            anything in here is just to give information
+                            NOT for Testing. ":" after double coat just printable
+
+
+                      4.    Steps (Step by Step) description of what step does,
+                            this is actually where th testing is done on by one
+                            every step is one action/ one input/ one outcome
+                            it will go as name of method of excluding(run) of step
+                            FOR Testing. There is no ":" after Gherkin
+
+
+          Given -> For pre-Condition for Scenario (if any)
+          When  -> First Step(opening), For action needs to be done to achieve Scenario
+          And   -> Next Steps, For achieve Scenario. Things that should be done
+          Then  -> Final outcome, result! The end of What Scenario will achieve.
